@@ -1,0 +1,100 @@
+﻿<Window x:Class="WPF_POE_ST10311687.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_POE_ST10311687"
+        mc:Ignorable="d"
+        Title="ST10311687 Recipe App" Height="900" Width="1100">
+    
+    <Grid Background="#4A5ACA"  RenderTransformOrigin="0.963,0.924">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="44*"/>
+            <RowDefinition Height="70*"/>
+            <RowDefinition Height="70*"/>
+            <RowDefinition Height="70*"/>
+            <RowDefinition Height="70*"/>
+            <RowDefinition Height="70*"/>
+            <RowDefinition Height="70*"/>
+            <RowDefinition Height="70*"/>
+            <RowDefinition Height="70*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="370*"/>
+            <ColumnDefinition Width="700*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Content="ST10311687 Recipe Application" FontSize="25" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.126,0.272" 
+               FontWeight="Bold" FontFamily="Segoe UI Historic" Margin="365,12,0,0" Grid.ColumnSpan="2" Height="43" Width="370"/>
+        <Rectangle Grid.Column="0" Grid.ColumnSpan="1" Grid.Row="1" Height="1" Fill="Black" VerticalAlignment="Bottom"/>
+
+        <Rectangle Grid.Column="1" Grid.Row="1" Grid.RowSpan="7" Width="1" Fill="Black" HorizontalAlignment="Left"/>
+        <Rectangle Grid.Column="0" Grid.ColumnSpan="1" Grid.Row="0" Height="1" Fill="Black" VerticalAlignment="Bottom"/>
+
+        <!---Add recipe button-->
+
+        <Button  Grid.Column="0"   x:Name="btnAddRecipe" Content="Add Recipe" FontSize="13" HorizontalAlignment="Left" Margin="223,41,0,0" VerticalAlignment="Top" Background="#FFB4F9F6" Height="35" Width="132" Click="btnAddRecipe_Click" Grid.Row="1" />
+        <Rectangle Grid.Column="0" Grid.ColumnSpan="1" Grid.Row="1" Height="1" Fill="Black" VerticalAlignment="Bottom"/>
+        <Label Grid.Row="1" Grid.Column="0" Content="Click Here to add another recipe ==&gt;" Name="anotherRecipeLable"  FontSize ="10" HorizontalAlignment="Left" Margin="42,45,0,0" 
+       VerticalAlignment="Top" RenderTransformOrigin="-3.215,-0.826" Height="27" Width="204" Foreground="blue" Visibility="Collapsed"/>
+
+        <!---Display recipe combo box-->
+        <Label Grid.Row="3" Grid.Column="0" Content="Give the Recipe Name to search:"  FontSize ="15" HorizontalAlignment="Left" Margin="3,4,0,0" 
+       VerticalAlignment="Top" RenderTransformOrigin="-3.215,-0.826" Height="27" Width="225" />
+        <ComboBox  Grid.Row="3" Grid.Column="0"  Name="txtSpecificRecipe"  IsEditable="True" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top" Width="198" Height="26"  />
+        <Rectangle Grid.Column="0" Grid.ColumnSpan="1" Grid.Row="2" Height="1" Fill="Black" VerticalAlignment="Center" Grid.RowSpan="2"/>
+
+        <!---Display all recipes button-->
+        <Button Grid.Column="0"  x:Name="btnDisplayAllRecipe" Content="Display All Recipe" FontSize="13" HorizontalAlignment="Left" Margin="223,34,0,0" VerticalAlignment="Top" Background="#FFB4F9F6" Height="36" Width="135"  Grid.Row="2" Click="btnDisplayAllRecipe_Click" />
+        <Rectangle Grid.Column="0" Grid.ColumnSpan="1" Grid.Row="3" Height="1" Fill="Black" VerticalAlignment="Bottom"/>
+
+        <!---Display a specific recipe button-->
+        <Button Grid.Column="0"  x:Name="btnDisplaySpecificRecipe" Content="Display Specific Recipe" FontSize="13" HorizontalAlignment="Left" Margin="223,0,0,0" VerticalAlignment="Center" Background="#FFB4F9F6" Height="37" Width="135"  Grid.Row="3" Click="btnDisplaySpecificRecipe_Click" />
+        <Rectangle Grid.Column="0" Grid.ColumnSpan="1" Grid.Row="4" Height="1" Fill="Black" VerticalAlignment="Bottom"/>
+
+        <!---Scale a recipe button-->
+        <Button Grid.Column="0"  x:Name="btnScaleRecipe" Content="Scale a recipe" FontSize="13" HorizontalAlignment="Left" Margin="223,0,0,0" VerticalAlignment="Center" Background="#FFB4F9F6" Height="33" Width="132"  Grid.Row="4" Click="btnScaleRecipe_Click" />
+        <Rectangle Grid.Column="0" Grid.ColumnSpan="1" Grid.Row="5" Height="1" Fill="Black" VerticalAlignment="Bottom"/>
+
+        <!---Reset a recipe button-->
+        <Button Grid.Column="0"  x:Name="btnResetRecipe" Content="Reset a recipe" FontSize="13" HorizontalAlignment="Left" Margin="223,41,0,0" VerticalAlignment="Top" Background="#FFB4F9F6" Height="35" Width="132"  Grid.Row="5" Click="btnResetRecipe_Click" />
+        <Rectangle Grid.Column="0" Grid.ColumnSpan="1" Grid.Row="6" Height="1" Fill="Black" VerticalAlignment="Bottom" Margin="0,0,0,93" Grid.RowSpan="2"/>
+
+        <!---Clear a recipe button-->
+        <Button Grid.Column="0"  x:Name="btnClearRecipe" Content="Clear all recipes" FontSize="13" HorizontalAlignment="Left" Margin="223,35,0,0" VerticalAlignment="Top" Background="#FFB4F9F6" Height="35" Width="132"  Grid.Row="7" Click="btnClearRecipe_Click" />
+        <Rectangle Grid.Column="0" Grid.ColumnSpan="1" Grid.Row="7" Height="1" Fill="Black" VerticalAlignment="Bottom" Margin="0,0,0,93" Grid.RowSpan="2"/>
+
+        <!---Add to menu button-->
+        <Label Grid.Row="6" Grid.Column="0" Content="NEW FEATURE!!" FontSize="20" HorizontalAlignment="Left" Margin="8,16,0,0"
+         VerticalAlignment="Top" RenderTransformOrigin="-3.215,-0.826" Height="44" Width="224" Foreground="Red" />
+        <Button Grid.Column="0"  x:Name="btnaddMenu" Content="Click to Add Menu" FontSize="13" HorizontalAlignment="Left" Margin="223,35,0,0" VerticalAlignment="Top" Background="#FFB4F9F6" Height="35" Width="132"  Grid.Row="6" Click="btnaddMenu_Click" />
+
+        <!---Exit button-->
+        <Button  x:Name="btnExit" Content="Exit" FontSize="13" HorizontalAlignment="Left" Margin="110,0,0,0" VerticalAlignment="Center" Background="#FFB4F9F6" Height="36" Width="132"  Grid.Row="8" Click="btnExit_Click" />
+
+        <!---List box-->
+        <ListBox x:Name="lstDisplayDetails" FontSize="13" Grid.Column="1" Grid.Row="1" Margin="10,10,10,10" BorderBrush="#FF00238E" Grid.RowSpan="7"/>
+
+        <!---Radio Button -->
+        <Label Grid.Row="3" Grid.Column="0" Content="Select the scaling factor:"  FontSize ="15" HorizontalAlignment="Left" Margin="36,96,0,0" 
+       VerticalAlignment="Top" RenderTransformOrigin="-3.215,-0.826" Height="35" Width="168" Grid.RowSpan="2" />
+
+        <RadioButton Content="0.5" Name="rdoZeroPointFive" HorizontalAlignment="Left" Margin="52,27,0,0" Grid.Row="4" VerticalAlignment="Top" Height="15" Width="42"/>
+        <RadioButton Content="2" Name="rdoTwo" HorizontalAlignment="Left" Margin="99,27,0,0" Grid.Row="4" VerticalAlignment="Top" Height="15" Width="38"/>
+        <RadioButton Content="3" Name="rdoThree" HorizontalAlignment="Left" Margin="137,27,0,0" Grid.Row="4" VerticalAlignment="Top" Height="15" Width="38"/>
+
+        <!---Scale recipe name lable -->
+        <Label Grid.Row="4" Grid.Column="0" Content="Give the Recipe Name to scale:"  FontSize ="15" HorizontalAlignment="Left" Margin="10,38,0,0" 
+       VerticalAlignment="Top" RenderTransformOrigin="-3.215,-0.826" Height="33" Width="226" />
+        <ComboBox  Grid.Row="4" Grid.Column="0"  Name="txtSpecificRecipeToScale"  IsEditable="True" HorizontalAlignment="Left" Margin="10,66,0,0" VerticalAlignment="Top" Width="198" Height="26"  />
+
+        <!---Recipe name to reset data -->
+        <Label Grid.Row="5" Grid.Column="0" Content="Give the Recipe Name to Reset:"  FontSize ="15" HorizontalAlignment="Left" Margin="9,20,0,0" 
+          VerticalAlignment="Top" RenderTransformOrigin="-3.215,-0.826" Height="33" Width="226" />
+        <ComboBox  Grid.Row="5" Grid.Column="0"  Name="txtResetRecipe"  IsEditable="True" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" Width="198" Height="26"  />
+
+        
+    </Grid>
+</Window>
