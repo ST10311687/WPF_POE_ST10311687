@@ -1,0 +1,71 @@
+﻿<Window x:Class="WPF_POE_ST10311687.addIngredient"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_POE_ST10311687"
+        mc:Ignorable="d"
+        Title="addIngredient" Loaded="Window_Loaded" Height="600" Width="1000">
+    <Grid Background="#4A5ACA">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="46*"/>
+            <RowDefinition Height="46*"/>
+            <RowDefinition Height="46*"/>
+            <RowDefinition Height="46*"/>
+            <RowDefinition Height="46*"/>
+            <RowDefinition Height="46*"/>
+            <RowDefinition Height="46*"/>
+            <RowDefinition Height="46*"/>
+            <RowDefinition Height="46*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="530"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        
+        <!---Recipe lable and text box-->
+        <Label Grid.Row="0" Grid.Column="0" Content="Recipe Name :"  FontSize ="20" HorizontalAlignment="Left" Margin="5,18,0,0" VerticalAlignment="Top" RenderTransformOrigin="-3.215,-0.826" />
+        <TextBox Grid.Row="0" Grid.Column="0" Name="txtRecipeName" FontSize="20"  HorizontalAlignment="Left" Margin="304,25,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="215" BorderBrush="Black"/>
+        
+        <!---Ingredient lable and text box-->
+        <Label Grid.Column="0" Grid.Row="1"  Content="Ingredient Name :" FontSize="20" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Center"/>
+        <TextBox  Grid.Column="0" Grid.Row="1"  x:Name="txtIngredientName" FontSize="20"  HorizontalAlignment="Left" Margin="304,26,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="215" BorderBrush="Black"/>
+
+        <!---Quantity lable and text box-->
+        <Label  Grid.Column="0" Grid.Row="2" Content="Quantity :" FontSize="20" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Center"/>
+        <Label  Grid.Column="0" Grid.Row="2" Content="The unit used to express how much of each ingredient there is." FontSize="11" HorizontalAlignment="Left" Margin="10,2,0,0" VerticalAlignment="Top"/>
+        <TextBox  Grid.Column="0" x:Name="txtQuantity" FontSize="20" Grid.Row="2"  HorizontalAlignment="Left" Margin="304,26,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="215" BorderBrush="Black"/>
+        
+        <!---Unit of measurment lable and text box-->
+        <Label  Grid.Column="0" Grid.Row="3" Content="Unit Of Measurement :" FontSize="20" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Center"/>
+        <Label  Grid.Column="0" Grid.Row="3" Content="The unit of measurement used to express the ingredient's quantity (teaspoon, cup, or tablespoon)" FontSize="11" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
+        <TextBox  Grid.Column="0" x:Name="txtUnitOfMeasurement" FontSize="20" Grid.Row="3"  HorizontalAlignment="Left" Margin="304,26,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="215" BorderBrush="Black"/>
+        
+        <!---Calories lable and text box-->
+        <Label  Grid.Column="0" Grid.Row="4" Content="Calories :" FontSize="20" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Center"/>
+        <Label  Grid.Column="0" Grid.Row="4" Content="(The total energy provided by the ingredient)" FontSize="11" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
+        <TextBox  Grid.Column="0" x:Name="txtCalories" FontSize="20" Grid.Row="4"  HorizontalAlignment="Left" Margin="304,26,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="215" BorderBrush="Black"/>
+        
+        <!---Food group lable and combo box-->
+        <Label  Grid.Column="0" Grid.Row="5" Content="Food Groups :" FontSize="20" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Center"/>
+        <Label  Grid.Column="0" Grid.Row="5" Content="(Food groups are categories of foods that contain similar nutrients)" FontSize="11" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
+        <ComboBox  Grid.Column="0" Name="cmbFoodGroup" Grid.Row="5"   IsEditable="True" HorizontalAlignment="Left" Margin="304,29,0,0" VerticalAlignment="Top" Width="215" Height="26"  />
+        
+        <!---Add ingredient button-->
+        <Button  Grid.Column="0" Width="500" Height="40" Grid.Row="6" Content="Add Ingredeint" FontSize="20" Background="#FFB4F9F6" Click="Button_Ingredient"/>
+        
+        <!---List box-->
+        <ListBox x:Name="lstDisplay" FontSize="12" Grid.Column="1" Grid.Row="0" Margin="10,14,10,10" BorderBrush="#FF00238E" Grid.RowSpan="8"/>
+
+        <!---Add steps-->
+        <Label  Grid.Column="0" Grid.Row="7" Content="Steps of Recipe :" FontSize="20" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Center"/>
+        <TextBox  Grid.Column="0" x:Name="txtList" FontSize="15" Grid.Row="7"  HorizontalAlignment="Left" Margin="250,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="269" BorderBrush="Black" Height="66"/>
+        
+        <!---Add steps button-->
+        <Button  Grid.Column="0" Width="500" Height="40" Grid.Row="8" Content="Add Step" FontSize="20" Background="#FFB4F9F6" Click="Button_Step"/>
+        
+        <!---Add recipe button-->
+        <Button  Grid.Column="1" Width="400" Height="40" Grid.Row="8" Content="Add Recipe" FontSize="20" Background="#FFB4F9F6" Click="Button_AddRecipe"/>
+
+    </Grid>
+</Window>

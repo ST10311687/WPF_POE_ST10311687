@@ -26,8 +26,7 @@
             <ColumnDefinition Width="700*"/>
         </Grid.ColumnDefinitions>
 
-        <Label Content="ST10311687 Recipe Application" FontSize="25" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.126,0.272" 
-               FontWeight="Bold" FontFamily="Segoe UI Historic" Margin="365,12,0,0" Grid.ColumnSpan="2" Height="43" Width="370"/>
+        <Label Content="ST10311687 Recipe Application" FontSize="25" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.126,0.272" FontWeight="Bold" FontFamily="Segoe UI Historic" Margin="365,12,0,0" Grid.ColumnSpan="2" Height="43" Width="370"/>
         <Rectangle Grid.Column="0" Grid.ColumnSpan="1" Grid.Row="1" Height="1" Fill="Black" VerticalAlignment="Bottom"/>
 
         <Rectangle Grid.Column="1" Grid.Row="1" Grid.RowSpan="7" Width="1" Fill="Black" HorizontalAlignment="Left"/>
@@ -35,19 +34,17 @@
 
         <!---Add recipe button-->
 
-        <Button  Grid.Column="0"   x:Name="btnAddRecipe" Content="Add Recipe" FontSize="13" HorizontalAlignment="Left" Margin="223,41,0,0" VerticalAlignment="Top" Background="#FFB4F9F6" Height="35" Width="132" Click="btnAddRecipe_Click" Grid.Row="1" />
+        <Button  Grid.Column="0"   x:Name="btnAddRecipe" Content="Add Recipe" FontSize="13" HorizontalAlignment="Left" Margin="15,15,0,0" VerticalAlignment="Top" Background="#FFB4F9F6" Height="70" Width="350" Click="btnAddRecipe_Click" Grid.Row="1" />
         <Rectangle Grid.Column="0" Grid.ColumnSpan="1" Grid.Row="1" Height="1" Fill="Black" VerticalAlignment="Bottom"/>
-        <Label Grid.Row="1" Grid.Column="0" Content="Click Here to add another recipe ==&gt;" Name="anotherRecipeLable"  FontSize ="10" HorizontalAlignment="Left" Margin="42,45,0,0" 
-       VerticalAlignment="Top" RenderTransformOrigin="-3.215,-0.826" Height="27" Width="204" Foreground="blue" Visibility="Collapsed"/>
+        <Label Grid.Row="1" Grid.Column="0" Content="Click Here to add another recipe ==&gt;" Name="anotherRecipeLable"  FontSize ="10" HorizontalAlignment="Left" Margin="42,45,0,0" VerticalAlignment="Top" RenderTransformOrigin="-3.215,-0.826" Height="27" Width="204" Foreground="blue" Visibility="Collapsed"/>
 
         <!---Display recipe combo box-->
-        <Label Grid.Row="3" Grid.Column="0" Content="Give the Recipe Name to search:"  FontSize ="15" HorizontalAlignment="Left" Margin="3,4,0,0" 
-       VerticalAlignment="Top" RenderTransformOrigin="-3.215,-0.826" Height="27" Width="225" />
+        <Label Grid.Row="3" Grid.Column="0" Content="Give the Recipe Name to search:"  FontSize ="15" HorizontalAlignment="Left" Margin="3,4,0,0" VerticalAlignment="Top" RenderTransformOrigin="-3.215,-0.826" Height="27" Width="225" />
         <ComboBox  Grid.Row="3" Grid.Column="0"  Name="txtSpecificRecipe"  IsEditable="True" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top" Width="198" Height="26"  />
         <Rectangle Grid.Column="0" Grid.ColumnSpan="1" Grid.Row="2" Height="1" Fill="Black" VerticalAlignment="Center" Grid.RowSpan="2"/>
 
         <!---Display all recipes button-->
-        <Button Grid.Column="0"  x:Name="btnDisplayAllRecipe" Content="Display All Recipe" FontSize="13" HorizontalAlignment="Left" Margin="223,34,0,0" VerticalAlignment="Top" Background="#FFB4F9F6" Height="36" Width="135"  Grid.Row="2" Click="btnDisplayAllRecipe_Click" />
+        <Button Grid.Column="0"  x:Name="btnDisplayAllRecipe" Content="Display All Recipe" FontSize="13" HorizontalAlignment="Left" Margin="15,15,0,0" VerticalAlignment="Top" Background="#FFB4F9F6" Height="70" Width="350"  Grid.Row="2" Click="btnDisplayAllRecipe_Click" />
         <Rectangle Grid.Column="0" Grid.ColumnSpan="1" Grid.Row="3" Height="1" Fill="Black" VerticalAlignment="Bottom"/>
 
         <!---Display a specific recipe button-->
@@ -63,19 +60,17 @@
         <Rectangle Grid.Column="0" Grid.ColumnSpan="1" Grid.Row="6" Height="1" Fill="Black" VerticalAlignment="Bottom" Margin="0,0,0,93" Grid.RowSpan="2"/>
 
         <!---Clear a recipe button-->
-        <Button Grid.Column="0"  x:Name="btnClearRecipe" Content="Clear all recipes" FontSize="13" HorizontalAlignment="Left" Margin="223,35,0,0" VerticalAlignment="Top" Background="#FFB4F9F6" Height="35" Width="132"  Grid.Row="7" Click="btnClearRecipe_Click" />
+        <Button Grid.Column="0"  x:Name="btnClearRecipe" Content="Clear all recipes" FontSize="13" HorizontalAlignment="Left" Margin="15,15,0,0" VerticalAlignment="Top" Background="#FFB4F9F6" Height="70" Width="350"  Grid.Row="7" Click="btnClearRecipe_Click" />
         <Rectangle Grid.Column="0" Grid.ColumnSpan="1" Grid.Row="7" Height="1" Fill="Black" VerticalAlignment="Bottom" Margin="0,0,0,93" Grid.RowSpan="2"/>
 
         <!---Add to menu button-->
-        <Label Grid.Row="6" Grid.Column="0" Content="NEW FEATURE!!" FontSize="20" HorizontalAlignment="Left" Margin="8,16,0,0"
-         VerticalAlignment="Top" RenderTransformOrigin="-3.215,-0.826" Height="44" Width="224" Foreground="Red" />
-        <Button Grid.Column="0"  x:Name="btnaddMenu" Content="Click to Add Menu" FontSize="13" HorizontalAlignment="Left" Margin="223,35,0,0" VerticalAlignment="Top" Background="#FFB4F9F6" Height="35" Width="132"  Grid.Row="6" Click="btnaddMenu_Click" />
+        <Button Grid.Column="0"  x:Name="btnaddMenu" Content="Click to Add Menu" FontSize="13" HorizontalAlignment="Left" Margin="15,15,0,0" VerticalAlignment="Top" Background="#FFB4F9F6" Height="70" Width="350"  Grid.Row="6" Click="btnaddMenu_Click" />
 
         <!---Exit button-->
-        <Button  x:Name="btnExit" Content="Exit" FontSize="13" HorizontalAlignment="Left" Margin="110,0,0,0" VerticalAlignment="Center" Background="#FFB4F9F6" Height="36" Width="132"  Grid.Row="8" Click="btnExit_Click" />
+        <Button  x:Name="btnExit" Content="Exit" FontSize="13" HorizontalAlignment="Left" Margin="15,15,0,0" VerticalAlignment="Center" Background="Red"  Height="70" Width="350"  Grid.Row="8" Click="btnExit_Click" />
 
         <!---List box-->
-        <ListBox x:Name="lstDisplayDetails" FontSize="13" Grid.Column="1" Grid.Row="1" Margin="10,10,10,10" BorderBrush="#FF00238E" Grid.RowSpan="7"/>
+        <ListBox x:Name="lstDisplayDetails" FontSize="13" Grid.Column="1" Grid.Row="1" Margin="10,10,10,-100" BorderBrush="#FF00238E" Grid.RowSpan="7"/>
 
         <!---Radio Button -->
         <Label Grid.Row="3" Grid.Column="0" Content="Select the scaling factor:"  FontSize ="15" HorizontalAlignment="Left" Margin="36,96,0,0" 
