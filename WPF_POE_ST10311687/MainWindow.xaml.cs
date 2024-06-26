@@ -260,7 +260,9 @@ namespace WPF_POE_ST10311687
             }
             else
             {
-                lstDisplayDetails.Items.Clear();               
+                lstDisplayDetails.Items.Clear();   
+                Menu menu = new Menu(Recipes);
+                menu.Show();
             }
         }
 

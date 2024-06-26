@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WPF_POE_ST10311687"
         mc:Ignorable="d"
         Title="addIngredient" Loaded="Window_Loaded" Height="600" Width="1000">
-    <Grid Background="#4A5ACA">
+    <Grid Background="Gray">
         <Grid.RowDefinitions>
             <RowDefinition Height="46*"/>
             <RowDefinition Height="46*"/>

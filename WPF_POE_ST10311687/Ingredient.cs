@@ -15,18 +15,7 @@ namespace WPF_POE_ST10311687
 
         /// <summary>
         /// Getters and setters for each ingredient
-        /// </summary>
-        /// <param name="name"></param>
-        /// <param name="Quantity"></param>
-        /// <param name="Unit"></param>
-        //public Ingredient(string name, float Quantity, String Unit, int calories, string foodGroup)
-        //{
-        //    this.Name = name;
-        //    this.Quantity = Quantity;
-        //    this.UnitOfMeasurement = Unit;
-        //    this.Calories = calories;
-        //    this.FoodGroup = foodGroup;
-        //}
+        /// </summary>       
 
         public double Calories
         {

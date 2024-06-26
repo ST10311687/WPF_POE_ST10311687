@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="ST10311687 Recipe App" Height="900" Width="1100">
     
-    <Grid Background="#4A5ACA"  RenderTransformOrigin="0.963,0.924">
+    <Grid Background="Gray"  RenderTransformOrigin="0.963,0.924">
 
         <Grid.RowDefinitions>
             <RowDefinition Height="44*"/>
@@ -36,8 +36,7 @@
 
         <Button  Grid.Column="0"   x:Name="btnAddRecipe" Content="Add Recipe" FontSize="13" HorizontalAlignment="Left" Margin="15,15,0,0" VerticalAlignment="Top" Background="#FFB4F9F6" Height="70" Width="350" Click="btnAddRecipe_Click" Grid.Row="1" />
         <Rectangle Grid.Column="0" Grid.ColumnSpan="1" Grid.Row="1" Height="1" Fill="Black" VerticalAlignment="Bottom"/>
-        <Label Grid.Row="1" Grid.Column="0" Content="Click Here to add another recipe ==&gt;" Name="anotherRecipeLable"  FontSize ="10" HorizontalAlignment="Left" Margin="42,45,0,0" VerticalAlignment="Top" RenderTransformOrigin="-3.215,-0.826" Height="27" Width="204" Foreground="blue" Visibility="Collapsed"/>
-
+        
         <!---Display recipe combo box-->
         <Label Grid.Row="3" Grid.Column="0" Content="Give the Recipe Name to search:"  FontSize ="15" HorizontalAlignment="Left" Margin="3,4,0,0" VerticalAlignment="Top" RenderTransformOrigin="-3.215,-0.826" Height="27" Width="225" />
         <ComboBox  Grid.Row="3" Grid.Column="0"  Name="txtSpecificRecipe"  IsEditable="True" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top" Width="198" Height="26"  />
