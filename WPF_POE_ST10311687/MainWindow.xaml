@@ -51,19 +51,19 @@
         <Rectangle Grid.Column="0" Grid.ColumnSpan="1" Grid.Row="4" Height="1" Fill="Black" VerticalAlignment="Bottom"/>
 
         <!---Scale a recipe button-->
-        <Button Grid.Column="0"  x:Name="btnScaleRecipe" Content="Scale a recipe" FontSize="13" HorizontalAlignment="Left" Margin="223,0,0,0" VerticalAlignment="Center" Background="#FFB4F9F6" Height="33" Width="132"  Grid.Row="4" Click="btnScaleRecipe_Click" />
+        <Button Grid.Column="0"  x:Name="btnScaleRecipe" Content="Scale a Recipe" FontSize="13" HorizontalAlignment="Left" Margin="223,0,0,0" VerticalAlignment="Center" Background="#FFB4F9F6" Height="33" Width="132"  Grid.Row="4" Click="btnScaleRecipe_Click" />
         <Rectangle Grid.Column="0" Grid.ColumnSpan="1" Grid.Row="5" Height="1" Fill="Black" VerticalAlignment="Bottom"/>
 
         <!---Reset a recipe button-->
-        <Button Grid.Column="0"  x:Name="btnResetRecipe" Content="Reset a recipe" FontSize="13" HorizontalAlignment="Left" Margin="223,41,0,0" VerticalAlignment="Top" Background="#FFB4F9F6" Height="35" Width="132"  Grid.Row="5" Click="btnResetRecipe_Click" />
+        <Button Grid.Column="0"  x:Name="btnResetRecipe" Content="Reset a Recipe" FontSize="13" HorizontalAlignment="Left" Margin="223,41,0,0" VerticalAlignment="Top" Background="#FFB4F9F6" Height="35" Width="132"  Grid.Row="5" Click="btnResetRecipe_Click" />
         <Rectangle Grid.Column="0" Grid.ColumnSpan="1" Grid.Row="6" Height="1" Fill="Black" VerticalAlignment="Bottom" Margin="0,0,0,93" Grid.RowSpan="2"/>
 
         <!---Clear a recipe button-->
-        <Button Grid.Column="0"  x:Name="btnClearRecipe" Content="Clear all recipes" FontSize="13" HorizontalAlignment="Left" Margin="15,15,0,0" VerticalAlignment="Top" Background="#FFB4F9F6" Height="70" Width="350"  Grid.Row="7" Click="btnClearRecipe_Click" />
+        <Button Grid.Column="0"  x:Name="btnClearRecipe" Content="Clear All Recipes" FontSize="13" HorizontalAlignment="Left" Margin="15,15,0,0" VerticalAlignment="Top" Background="#FFB4F9F6" Height="70" Width="350"  Grid.Row="7" Click="btnClearRecipe_Click" />
         <Rectangle Grid.Column="0" Grid.ColumnSpan="1" Grid.Row="7" Height="1" Fill="Black" VerticalAlignment="Bottom" Margin="0,0,0,93" Grid.RowSpan="2"/>
 
         <!---Add to menu button-->
-        <Button Grid.Column="0"  x:Name="btnaddMenu" Content="Click to Add Menu" FontSize="13" HorizontalAlignment="Left" Margin="15,15,0,0" VerticalAlignment="Top" Background="#FFB4F9F6" Height="70" Width="350"  Grid.Row="6" Click="btnaddMenu_Click" />
+        <Button Grid.Column="0"  x:Name="btnaddMenu" Content="Add Menu" FontSize="13" HorizontalAlignment="Left" Margin="15,15,0,0" VerticalAlignment="Top" Background="#FFB4F9F6" Height="70" Width="350"  Grid.Row="6" Click="btnaddMenu_Click" />
 
         <!---Exit button-->
         <Button  x:Name="btnExit" Content="Exit" FontSize="13" HorizontalAlignment="Left" Margin="15,15,0,0" VerticalAlignment="Center" Background="Red"  Height="70" Width="350"  Grid.Row="8" Click="btnExit_Click" />

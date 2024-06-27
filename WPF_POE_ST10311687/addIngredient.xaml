@@ -43,12 +43,12 @@
         
         <!---Calories lable and text box-->
         <Label  Grid.Column="0" Grid.Row="4" Content="Calories :" FontSize="20" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Center"/>
-        <Label  Grid.Column="0" Grid.Row="4" Content="(The total energy provided by the ingredient)" FontSize="11" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
+        <Label  Grid.Column="0" Grid.Row="4" Content="The total energy provided by the ingredient" FontSize="11" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
         <TextBox  Grid.Column="0" x:Name="txtCalories" FontSize="20" Grid.Row="4"  HorizontalAlignment="Left" Margin="304,26,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="215" BorderBrush="Black"/>
         
         <!---Food group lable and combo box-->
         <Label  Grid.Column="0" Grid.Row="5" Content="Food Groups :" FontSize="20" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Center"/>
-        <Label  Grid.Column="0" Grid.Row="5" Content="(Food groups are categories of foods that contain similar nutrients)" FontSize="11" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
+        <Label  Grid.Column="0" Grid.Row="5" Content="Food groups are categories of foods that contain similar nutrients" FontSize="11" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
         <ComboBox  Grid.Column="0" Name="cmbFoodGroup" Grid.Row="5"   IsEditable="True" HorizontalAlignment="Left" Margin="304,29,0,0" VerticalAlignment="Top" Width="215" Height="26"  />
         
         <!---Add ingredient button-->
