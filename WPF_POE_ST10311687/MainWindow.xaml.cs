@@ -19,13 +19,9 @@ namespace WPF_POE_ST10311687
     /// Things to do 
     /// 1 - add comments
     /// 2 - add more references
-    /// 3 - add menu
-    /// 4 - fix text when a recipe has been added
     /// 5 - read me file
-    /// 6 - change colors
     /// 7 - resize exit
     /// 8 - capital letters
-    /// 9 - 
     /// </summary>
     public partial class MainWindow : Window
     {
@@ -41,8 +37,10 @@ namespace WPF_POE_ST10311687
         {
             InitializeComponent();
             this.Loaded += Window_Loaded;
-            anotherRecipeLable.Visibility = Visibility.Collapsed;
+           
         }
+
+        // ------------------------- Error handling method -------------------------
 
         private void displayNoRecipe()
         {
@@ -54,45 +52,48 @@ namespace WPF_POE_ST10311687
         {
             foreach (var recipeName in Recipes.Keys)
             {
-                txtSpecificRecipe.Items.Add(recipeName);
+                txtSpecificRecipe.Items.Add(recipeName); //Adding the recipe name to the combo box
             }
 
         }
 
+        // ------------------------- Recipe name loader method -------------------------
         private void LoadRecipeNames()
         {
-            txtSpecificRecipe.Items.Clear();
+            txtSpecificRecipe.Items.Clear(); //Clearing all the current items in the combo box
             txtSpecificRecipeToScale.Items.Clear();
             txtResetRecipe.Items.Clear();
             foreach (var recipeName in Recipes.Keys)
             {
-                txtSpecificRecipe.Items.Add(recipeName);
+                txtSpecificRecipe.Items.Add(recipeName); //Adding recipe name the the combo boxes
                 txtSpecificRecipeToScale.Items.Add(recipeName);
                 txtResetRecipe.Items.Add(recipeName);
             }
         }
 
+        // ------------------------- Calorie limiter method -------------------------
         private void ExceededCaloriesHandler(string message, double totalCalories)
         {
             string messageWithCalories = $"\t* Total calories (Calories quantify food energy intake): {totalCalories}\n" + message + "\n";
 
-            lstDisplayDetails.Items.Add(messageWithCalories);
+            lstDisplayDetails.Items.Add(messageWithCalories); //Adding the formated message to the list box
         }
 
+        // ------------------------- Scale specific recipe method -------------------------
         private void scaleRecipeSpecificName(double scalingNumber)
         {
             lstDisplayDetails.Items.Clear();
-            string recipeName1 = txtSpecificRecipeToScale.Text;
-            if (Recipes.ContainsKey(recipeName1))
+            string recipeName1 = txtSpecificRecipeToScale.Text; //Getting the name of the recipe to scale from the combo box 
+            if (Recipes.ContainsKey(recipeName1)) // Check if the recipe exists in the Recipes dictionary
             {
                 MessageBoxResult result = MessageBox.Show($"Are you sure you want to scale the {recipeName1} recipe?", "Confirmation", MessageBoxButton.YesNo);
                 if (result == MessageBoxResult.Yes)
                 {
-                    Recipes[recipeName1].ScaleRecipe(scalingNumber);
+                    Recipes[recipeName1].ScaleRecipe(scalingNumber); // Scale the recipe by the entered scaling number
                     lstDisplayDetails.Items.Add("The recipe has been scaled. Here is the updated recipe:\n");
-                    lstDisplayDetails.Items.Add(Recipes[recipeName1].DisplayRecipe());
-                    double totalCalories = Recipes[recipeName1].TotalCalories();
-                    Recipes[recipeName1].notifyer();
+                    lstDisplayDetails.Items.Add(Recipes[recipeName1].DisplayRecipe()); 
+                    double totalCalories = Recipes[recipeName1].TotalCalories(); // Calculate the total calories of the scaled recipe
+                    Recipes[recipeName1].notifyer(); // Notify any subscribers about the change in the recipe
                 }
 
             }
@@ -103,10 +104,11 @@ namespace WPF_POE_ST10311687
             }
         }
 
+        // ------------------------- Add recipe button -------------------------
         private void btnAddRecipe_Click(object sender, RoutedEventArgs e)
         {
             addIngredient AddIngredient = new addIngredient();
-            AddIngredient.ShowDialog();
+            AddIngredient.ShowDialog(); //Take ingredient details from addIngredient
 
             allIngredients = AddIngredient.ingredients;
             allOriginalQuantities = AddIngredient.originalQuantities;
@@ -118,29 +120,30 @@ namespace WPF_POE_ST10311687
             {
                 recipe = new Recipe(recipeName, allIngredients, allOriginalQuantities, allOriginalUnits, allSteps);               
 
-                if (!Recipes.ContainsKey(recipe.RecipeName))
+                if (!Recipes.ContainsKey(recipe.RecipeName)) //Check to see if the recipe name already exists
                 {
-                    Recipes.Add(recipe.RecipeName, recipe);
+                    Recipes.Add(recipe.RecipeName, recipe); //Adding the recipe
                     lstDisplayDetails.Items.Clear();
-                    LoadRecipeNames();
+                    LoadRecipeNames(); //Method used to load recipe names
                 }
                 else
                 {
                     MessageBox.Show("A recipe with this name already exists.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
-            anotherRecipeLable.Visibility = Visibility.Visible;
+            
         }
 
+        // ------------------------- Display all recipes button button -------------------------
         private void btnDisplayAllRecipe_Click(object sender, RoutedEventArgs e)
         {
-            if (Recipes.Count == 0)
+            if (Recipes.Count == 0) //Check to see if recipes are in collection
             {
                 displayNoRecipe();
             }
             else
             {
-                lstDisplayDetails.Items.Clear();
+                lstDisplayDetails.Items.Clear(); //Clear list so user does not enter duplicates
                 List<string> sortedKeys = new List<string>(Recipes.Keys);
                 sortedKeys.Sort();
 
@@ -148,9 +151,10 @@ namespace WPF_POE_ST10311687
                 {
                     Recipe recipe = Recipes[key];
 
-                    recipe.ExceededCalories -= ExceededCaloriesHandler;
+                    recipe.ExceededCalories -= ExceededCaloriesHandler; // Unsubscribe from the ExceededCalories event to prevent multiple subscriptions
 
-                    recipe.ExceededCalories += ExceededCaloriesHandler;
+
+                    recipe.ExceededCalories += ExceededCaloriesHandler;  // Subscribe to the ExceededCalories event
                     lstDisplayDetails.Items.Add(recipe.DisplayRecipe());
                     recipe.notifyer(); 
                     lstDisplayDetails.Items.Add("-------------------------------------------------------" +
@@ -159,6 +163,7 @@ namespace WPF_POE_ST10311687
             }
         }
 
+        // ------------------------- Display specific recipe button -------------------------
         private void btnDisplaySpecificRecipe_Click(object sender, RoutedEventArgs e)
         {
             if (Recipes.Count == 0)
@@ -168,15 +173,17 @@ namespace WPF_POE_ST10311687
             else
             {
                 lstDisplayDetails.Items.Clear();
-                string recipeName = txtSpecificRecipe.Text;
+                string recipeName = txtSpecificRecipe.Text; // Get the name of the specific recipe to display from the ComboBox
                 if (Recipes.ContainsKey(recipeName))
                 {
-                    recipe.ExceededCalories -= ExceededCaloriesHandler;
+                    recipe.ExceededCalories -= ExceededCaloriesHandler; // Unsubscribe from the ExceededCalories event to prevent multiple subscriptions
 
-                    recipe.ExceededCalories += ExceededCaloriesHandler;
+                    recipe.ExceededCalories += ExceededCaloriesHandler; // Subscribe to the ExceededCalories event
 
-                    lstDisplayDetails.Items.Add(Recipes[recipeName].DisplayRecipe());
-                    double totalCalories = Recipes[recipeName].TotalCalories();
+
+                    lstDisplayDetails.Items.Add(Recipes[recipeName].DisplayRecipe()); 
+
+                    double totalCalories = Recipes[recipeName].TotalCalories(); // Calculate the total calories of the recipe
                     Recipes[recipeName].notifyer();
 
                     var stepsWithCheckBox = Recipes[recipeName].Steps.Select(step => new { Step = step }).ToList();
@@ -188,8 +195,8 @@ namespace WPF_POE_ST10311687
             }
         }
 
-        
 
+        // ------------------------- Scale recipe button -------------------------
         private void btnScaleRecipe_Click(object sender, RoutedEventArgs e)
         {
             if (Recipes.Count == 0)
@@ -218,6 +225,7 @@ namespace WPF_POE_ST10311687
             }
         }
 
+        // ------------------------- Reset recipe button -------------------------
         private void btnResetRecipe_Click(object sender, RoutedEventArgs e)
         {
             if (Recipes.Count == 0)
@@ -226,20 +234,20 @@ namespace WPF_POE_ST10311687
             }
             else
             {
-                string resetRecipeName = txtResetRecipe.Text;
-                if (Recipes.ContainsKey(resetRecipeName))
+                string resetRecipeName = txtResetRecipe.Text; // Get the name of the recipe to reset from the ComboBox
+                if (Recipes.ContainsKey(resetRecipeName)) // Check if the recipe exists in the Recipes dictionary
                 {
                     MessageBoxResult result = MessageBox.Show($"Are you sure you want to reset the {resetRecipeName} recipe?", "Confirmation", MessageBoxButton.YesNo);
 
                     if (result == MessageBoxResult.Yes)
                     {
                         lstDisplayDetails.Items.Clear();
-                        bool success = Recipes[resetRecipeName].ResetRecipe();
+                        bool success = Recipes[resetRecipeName].ResetRecipe(); // Attempt to reset the recipe to its original state
                         if (success)
                         {
                             lstDisplayDetails.Items.Add("The recipe has been reset. Here is the original recipe:");
                             lstDisplayDetails.Items.Add(Recipes[resetRecipeName].DisplayRecipe());
-                            double totalCalories = Recipes[resetRecipeName].TotalCalories();
+                            double totalCalories = Recipes[resetRecipeName].TotalCalories(); // Calculate the total calories of the reset recipe
                             Recipes[resetRecipeName].notifyer();
                         }
                     }
@@ -252,6 +260,7 @@ namespace WPF_POE_ST10311687
             }
         }
 
+        // ------------------------- Menu button -------------------------
         private void btnaddMenu_Click(object sender, RoutedEventArgs e)
         {
             if (Recipes.Count == 0)
@@ -266,6 +275,7 @@ namespace WPF_POE_ST10311687
             }
         }
 
+        // ------------------------- Clear recipe button -------------------------
         private void btnClearRecipe_Click(object sender, RoutedEventArgs e)
         {
             if (Recipes.Count == 0)
@@ -275,11 +285,11 @@ namespace WPF_POE_ST10311687
             else
             {
                 MessageBoxResult result = MessageBox.Show("Are you sure you want to clear all recipes? :", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
-                lstDisplayDetails.Items.Clear();
+                lstDisplayDetails.Items.Clear(); // Clear the list display to avoid duplicate entries
 
                 if (result == MessageBoxResult.Yes)
                 {
-                    Recipes.Clear();
+                    Recipes.Clear(); // Clear all ComboBoxes related to recipe
                     txtSpecificRecipe.Items.Clear();
                     txtSpecificRecipeToScale.Items.Clear();
                     txtResetRecipe.Items.Clear();
@@ -292,9 +302,10 @@ namespace WPF_POE_ST10311687
             }
         }
 
+        // ------------------------- Exit button -------------------------
         private void btnExit_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            this.Close(); //Closes the application
         }
     }
 }

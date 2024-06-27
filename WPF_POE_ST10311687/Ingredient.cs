@@ -5,6 +5,7 @@ using System.Linq;
 
 namespace WPF_POE_ST10311687
 {
+    // ------------------------- Getters and Setters -------------------------
     public class Ingredient
     {
         public string Name { get; set; }
@@ -12,10 +13,7 @@ namespace WPF_POE_ST10311687
         public string UnitOfMeasurement { get; set; }
         private double ccalories { get; set; }
         public string FoodGroup { get; set; }
-
-        /// <summary>
-        /// Getters and setters for each ingredient
-        /// </summary>       
+         
 
         public double Calories
         {
